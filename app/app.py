@@ -9,6 +9,9 @@ app = Flask(__name__)
 with open('pipeline_with_model.pkl', 'rb') as model_file:
     modelo = pickle.load(model_file)
 
+# Mapa inverso para convertir 0 y 1 en etiquetas
+mapa_inverso = {0: 'neutral or dissatisfied', 1: 'satisfied'}
+
 # Ruta para mostrar el formulario
 @app.route('/')
 def formulario():
@@ -49,6 +52,9 @@ def procesar_formulario():
     # Realizar predicción con el modelo
     resultado_prediccion = modelo.predict(df)
 
+    # Convertir la predicción a etiquetas
+    etiqueta_prediccion = mapa_inverso[resultado_prediccion[0]]
+
     # Crear una tabla HTML para mostrar los datos y la predicción
     tabla_html = f'''
         <table>
@@ -59,7 +65,7 @@ def procesar_formulario():
             <tr><td>Clase</td><td>{class_type}</td></tr>
             <tr><td>Edad</td><td>{age}</td></tr>
             <tr><td>Distancia de Vuelo</td><td>{flight_distance}</td></tr>
-            <tr><td>Predicción del Modelo</td><td>{resultado_prediccion[0]}</td></tr>
+            <tr><td>Predicción del Modelo</td><td>{etiqueta_prediccion}</td></tr>
         </table>
     '''
 

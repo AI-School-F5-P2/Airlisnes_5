@@ -2,6 +2,36 @@
 <html>
 <head>
     <title>Formulario de Opinión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>Formulario de Opinión</h1>
@@ -12,33 +42,32 @@
         <select name="Gender" required>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
-        </select><br><br>
+        </select><br>
 
         <label for="Customer Type">Tipo de Cliente:</label>
         <select name="Customer Type" required>
             <option value="Loyal Customer">Loyal Customer</option>
-            <option value="disloyal Custome">disloyal Custome</option>
-        </select><br><br>
+            <option value="disloyal Customer">disloyal Customer</option>
+        </select><br>
 
         <label for="Type of Travel">Tipo de Viaje:</label>
         <select name="Type of Travel" required>
             <option value="Personal Travel">Personal Travel</option>
             <option value="Business travel">Business travel</option>
-        </select><br><br>
+        </select><br>
 
         <label for="Class">Clase:</label>
         <select name="Class" required>
             <option value="Eco">Eco</option>
             <option value="Eco Plus">Eco Plus</option>
             <option value="Business">Business</option>
-        </select><br><br>
+        </select><br>
 
         <label for="Age">Edad:</label>
-        <input type="number" name="Age" required min="10" max="99"><br><br>
+        <input type="number" name="Age" required min="10" max="99"><br>
 
         <label for="Flight Distance">Distancia del Vuelo:</label>
-        <input type="number" name="Flight Distance" required><br><br>
-
+        <input type="number" name="Flight Distance" required><br>
 
         <!-- Calificaciones de Servicios -->
         <h2>Calificaciones de Servicios</h2>
@@ -51,7 +80,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Departure/Arrival time convenient -->
         <label for="Departure/Arrival time convenient">Departure/Arrival time convenient:</label>
@@ -61,7 +90,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Ease of Online booking -->
         <label for="Ease of Online booking">Ease of Online booking:</label>
@@ -71,7 +100,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Gate location -->
         <label for="Gate location">Gate location:</label>
@@ -81,7 +110,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Food and drink -->
         <label for="Food and drink">Food and drink:</label>
@@ -91,7 +120,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Online boarding -->
         <label for="Online boarding">Online boarding:</label>
@@ -101,7 +130,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Seat comfort -->
         <label for="Seat comfort">Seat comfort:</label>
@@ -111,7 +140,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Inflight entertainment -->
         <label for="Inflight entertainment">Inflight entertainment:</label>
@@ -121,7 +150,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- On-board service -->
         <label for="On-board service">On-board service:</label>
@@ -131,7 +160,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Leg room service -->
         <label for="Leg room service">Leg room service:</label>
@@ -141,7 +170,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Baggage handling -->
         <label for="Baggage handling">Baggage handling:</label>
@@ -151,7 +180,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Checkin service -->
         <label for="Checkin service">Checkin service:</label>
@@ -161,7 +190,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Inflight service -->
         <label for="Inflight service">Inflight service:</label>
@@ -171,7 +200,7 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Cleanliness -->
         <label for="Cleanliness">Cleanliness:</label>
@@ -181,17 +210,17 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
+        </select><br>
 
         <!-- Departure Delay in Minutes -->
         <label for="Departure Delay in Minutes">Departure Delay in Minutes:</label>
-        <input type="number" id="Departure Delay in Minutes" name="Departure Delay in Minutes" required>
+        <input type="number" id="Departure Delay in Minutes" name="Departure Delay in Minutes" required><br>
 
         <!-- Arrival Delay in Minutes -->
         <label for="Arrival Delay in Minutes">Arrival Delay in Minutes:</label>
-        <input type="number" id="Arrival Delay in Minutes" name="Arrival Delay in Minutes" required>
+        <input type="number" id="Arrival Delay in Minutes" name="Arrival Delay in Minutes" required><br>
 
         <button type="submit">Enviar</button>
-        </form>
-        </body>
-        </html>
+    </form>
+</body>
+</html>
