@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 import pickle
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
@@ -25,13 +25,7 @@ def procesar_formulario():
     age = int(request.form['Age'])
     flight_distance = int(request.form['Flight Distance'])
 
-    # Obtener las calificaciones de servicios
-    servicios = {}
-    for servicio in request.form:
-        if servicio != 'Gender' and servicio != 'Customer Type' and servicio != 'Type of Travel' and servicio != 'Class' and servicio != 'Age' and servicio != 'Flight Distance':
-            servicios[servicio] = int(request.form[servicio])
-
-    # Crear un DataFrame con los datos del formulario
+    # Crear un DataFrame de pandas con los datos del formulario
     data = {
         'Gender': [gender],
         'Customer Type': [customer_type],
@@ -40,23 +34,37 @@ def procesar_formulario():
         'Age': [age],
         'Flight Distance': [flight_distance]
     }
-    data.update(servicios)
+
     df = pd.DataFrame(data)
 
-    # Preprocesar los datos con el mismo preprocesador utilizado para entrenar el modelo
-    with open('preprocessor.pkl', 'rb') as preprocessor_file:
-        preprocessor = pickle.load(preprocessor_file)
+    # Obtener las calificaciones de servicios
+    servicios = {}
+    for servicio in request.form:
+        if servicio not in data:
+            servicios[servicio] = int(request.form[servicio])
 
-    X = preprocessor.transform(df)
+    # Agregar las calificaciones de servicios al DataFrame
+    df = df.assign(**servicios)
 
     # Realizar predicción con el modelo
-    resultado_prediccion = modelo.predict(X)
+    resultado_prediccion = modelo.predict(df)
 
-    # Guardar los datos en un archivo
-    with open('respuestas_clientes.csv', 'a') as nuevos_datos:
-        nuevos_datos.write(f'Género: {gender}, Tipo de Cliente: {customer_type}, Tipo de Viaje: {type_of_travel}, Clase: {class_type}, Edad: {age}, Distancia de Vuelo: {flight_distance}, Predicción del Modelo: {resultado_prediccion[0]}\n')
+    # Crear una tabla HTML para mostrar los datos y la predicción
+    tabla_html = f'''
+        <table>
+            <tr><th>Dato</th><th>Valor</th></tr>
+            <tr><td>Género</td><td>{gender}</td></tr>
+            <tr><td>Tipo de Cliente</td><td>{customer_type}</td></tr>
+            <tr><td>Tipo de Viaje</td><td>{type_of_travel}</td></tr>
+            <tr><td>Clase</td><td>{class_type}</td></tr>
+            <tr><td>Edad</td><td>{age}</td></tr>
+            <tr><td>Distancia de Vuelo</td><td>{flight_distance}</td></tr>
+            <tr><td>Predicción del Modelo</td><td>{resultado_prediccion[0]}</td></tr>
+        </table>
+    '''
 
-    return jsonify({'mensaje': 'Formulario procesado con éxito'})
+    # Renderizar la plantilla HTML y pasar la tabla como contexto
+    return render_template('respuesta.html', tabla_html=tabla_html)
 
 if __name__ == '__main__':
     app.run(debug=True)
