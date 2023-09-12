@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Opinión</title>
+</head>
+<body>
+    <h1>Formulario de Opinión</h1>
+    <form method="POST">
+        <!-- Datos del cliente -->
+        <h2>Datos del Cliente</h2>
+        <label for="gender">Género:</label>
+        <select name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+
+        <label for="customer_type">Tipo de Cliente:</label>
+        <select name="customer_type" required>
+            <option value="loyal">Loyal</option>
+            <option value="disloyal">Disloyal</option>
+        </select><br><br>
+
+        <label for="type_of_travel">Tipo de Viaje:</label>
+        <select name="type_of_travel" required>
+            <option value="business">Business</option>
+            <option value="travel">Travel</option>
+        </select><br><br>
+
+        <label for="class">Clase:</label>
+        <select name="class" required>
+            <option value="Eco">Eco</option>
+            <option value="Business Eco">Business Eco</option>
+            <option value="Business">Business</option>
+        </select><br><br>
+
+        <label for="age">Edad:</label>
+        <input type="number" name="age" required min="10" max="99"><br><br>
+
+        <label for="flight_distance">Distancia del Vuelo:</label>
+        <input type="number" name="flight_distance" required><br><br>
+
+
+        <!-- Calificaciones de Servicios -->
+        <h2>Calificaciones de Servicios</h2>
+
+        <!-- Inflight wifi service -->
+        <label for="inflight_wifi_service">Inflight wifi service:</label>
+        <select id="inflight_wifi_service" name="Inflight wifi service" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Departure/Arrival time convenient -->
+        <label for="departure_arrival_time_convenient">Departure/Arrival time convenient:</label>
+        <select id="departure_arrival_time_convenient" name="Departure/Arrival time convenient" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Ease of Online booking -->
+        <label for="ease_of_online_booking">Ease of Online booking:</label>
+        <select id="ease_of_online_booking" name="Ease of Online booking" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Gate location -->
+        <label for="gate_location">Gate location:</label>
+        <select id="gate_location" name="Gate location" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Food and drink -->
+        <label for="food_and_drink">Food and drink:</label>
+        <select id="food_and_drink" name="Food and drink" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Online boarding -->
+        <label for="online_boarding">Online boarding:</label>
+        <select id="online_boarding" name="Online boarding" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Seat comfort -->
+        <label for="seat_comfort">Seat comfort:</label>
+        <select id="seat_comfort" name="Seat comfort" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Inflight entertainment -->
+        <label for="inflight_entertainment">Inflight entertainment:</label>
+        <select id="inflight_entertainment" name="Inflight entertainment" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- On-board service -->
+        <label for="on_board_service">On-board service:</label>
+        <select id="on_board_service" name="On-board service" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Leg room service -->
+        <label for="leg_room_service">Leg room service:</label>
+        <select id="leg_room_service" name="Leg room service" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Baggage handling -->
+        <label for="baggage_handling">Baggage handling:</label>
+        <select id="baggage_handling" name="Baggage handling" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Checkin service -->
+        <label for="checkin_service">Checkin service:</label>
+        <select id="checkin_service" name="Checkin service" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Inflight service -->
+        <label for="inflight_service">Inflight service:</label>
+        <select id="inflight_service" name="Inflight service" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Cleanliness -->
+        <label for="cleanliness">Cleanliness:</label>
+        <select id="cleanliness" name="Cleanliness" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- Departure Delay in Minutes -->
+        <label for="departure_delay_minutes">Departure Delay in Minutes:</label>
+        <input type="number" id="departure_delay_minutes" name="Departure Delay in Minutes" required>
+
+        <!-- Arrival Delay in Minutes -->
+        <label for="arrival_delay_minutes">Arrival Delay in Minutes:</label>
+        <input type="number" id="arrival_delay_minutes" name="Arrival Delay in Minutes" required>
+
+        <button type="submit">Enviar</button>
+        </form>
+        </body>
+        </html>
