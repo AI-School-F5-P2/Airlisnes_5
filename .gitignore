@@ -160,4 +160,5 @@ cython_debug/
 #.idea/
 *.csv 
 Airline/
+README.md
 Air.ipynb
